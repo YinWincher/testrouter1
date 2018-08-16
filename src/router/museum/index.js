@@ -6,11 +6,12 @@ const route = [
 	{
 		path:'',
         component:AllGoods,
-        
+
 	},
     {
         path:'allGoods',
-        component:AllGoods,
+        // component: (resolve)=>import('../../components/AllGoods'),
+	    component : AllGoods,
         meta :{
             a:132
         }

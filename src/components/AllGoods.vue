@@ -5,10 +5,8 @@
                 <el-row>
                     <el-col :span="8">
                         <FormItem
-                            label="输入"
-                            placeholder="请输入"
-                            type="input"
-                            :value="val"
+                            :model="model"
+                            v-model="name"
                         >
                         </FormItem>
                         <el-form-item label="商品编号">
@@ -125,9 +123,7 @@
                         prop="productId">
                 </el-table-column>
             </el-table>
-            <el-pagination>
-
-            </el-pagination>
+            <el-pagination></el-pagination>
         </main>
     </div>
 </template>
@@ -138,8 +134,45 @@
 
     import {transformDate} from '../api/index';
 
+    const model = {
+    	type:'cascader',
+        label : '名称',
+        placeholder : '请输入',
+        'on-text' : 'kai',
+        options : [
+            {
+        	    value : 132,
+                label : 13,
+                disabled : true,
+                children:[
+                    {
+	                    value : 132,
+	                    label : 13,
+                    },
+                    {
+	                    value : 132,
+	                    label : 13,
+                    }
+                ]
+            },
+            {
+        	    value : 1,
+                label : 1,
+	            children:[
+		            {
+			            value : 132,
+			            label : 13,
+		            },
+		            {
+			            value : 132,
+			            label : 13,
+		            }
+	            ]
+            }
+        ]
+        // disabled : true
+    }
 
-    console.log(mockData)
     export default {
         name: "AllGoods",
 	    components: {FormItem},
@@ -149,10 +182,9 @@
         			id: '',
                     name: ''
                 },
+                model : model,
                 tableData : mockData.list,
-                val: {
-        			text:''
-                }
+                name : null
             }
         },
         methods: {

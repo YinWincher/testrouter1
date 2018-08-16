@@ -14,6 +14,12 @@
 <script>
     import Header from './components/Header';
     import Menu from './components/Menu';
+    import {login} from './api/login';
+    login({
+        account : '18038384237',
+        smsCode : '111111'
+    });
+
 export default {
   name: 'App',
     components:{
@@ -31,14 +37,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+    padding-right: 20px;
 }
 .main{
     display: flex;
 }
 .menu {
-    width: 400px;
+    width: 300px;
+    flex-shrink: 0;
 }
     .wrap{
-        flex: 1;
+        flex-grow: 1;
     }
 </style>

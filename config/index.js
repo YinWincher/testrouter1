@@ -14,6 +14,9 @@ module.exports = {
 	    '/mall-admin-web': {
 		    target: 'http://172.25.62.89:9666/'
 	    },
+	    '/euc-admin-web': {
+		    target: 'http://172.25.62.89:9667/'
+	    },
     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
